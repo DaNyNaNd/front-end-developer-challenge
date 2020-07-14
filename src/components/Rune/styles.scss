@@ -1,0 +1,111 @@
+$rune-image: url('/talent-icons-sprite.png');
+$rune-height: 50px;
+$rune-width: 50px;
+
+@mixin rune-image($rune) {
+  background-image: $rune-image;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  width: $rune-width;
+  height: $rune-height;
+  margin: 40px;
+  display: inline-block;
+
+  @if $rune == chevron {
+    background-position: left top;
+  }
+  @else if $rune == chevron-inactive {
+    background-position: left bottom;
+  }
+  @else if $rune == silverware {
+    background-position: -50px top;
+  }
+  @else if $rune == silverware-inactive {
+    background-position: -50px bottom;
+  }
+  @else if $rune == cake {
+    background-position: -100px top;
+  }
+  @else if $rune == cake-inactive {
+    background-position: -100px bottom;
+  }
+  @else if $rune == crown {
+    background-position: -150px top;
+  }
+  @else if $rune == crown-inactive {
+    background-position: -150px bottom;
+  }
+  @else if $rune == skimask {
+    background-position: -200px top;
+  }
+  @else if $rune == skimask-inactive {
+    background-position: -200px bottom;
+  }
+  @else if $rune == snorkel {
+    background-position: -250px top;
+  }
+  @else if $rune == snorkel-inactive {
+    background-position: -250px bottom;
+  }
+  @else if $rune == lightning {
+    background-position: -300px top;
+  }
+  @else if $rune == lightning-inactive {
+    background-position: -300px bottom;
+  }
+  @else if $rune == skull {
+    background-position: -350px top;
+  }
+  @else if $rune == skull-inactive {
+    background-position: -350px bottom;
+  }
+}
+
+.chevron {
+  @include rune-image(chevron);
+}
+.chevron-inactive {
+  @include rune-image(chevron-inactive);
+}
+.silverware {
+  @include rune-image(silverware);
+}
+.silverware-inactive {
+  @include rune-image(silverware-inactive);
+}
+.cake {
+  @include rune-image(cake);
+}
+.cake-inactive {
+  @include rune-image(cake-inactive);
+}
+.crown {
+  @include rune-image(crown);
+}
+.crown-inactive {
+  @include rune-image(crown-inactive);
+}
+.skimask {
+  @include rune-image(skimask);
+}
+.skimask-inactive {
+  @include rune-image(skimask-inactive);
+}
+.snorkel {
+  @include rune-image(snorkel);
+}
+.snorkel-inactive {
+  @include rune-image(snorkel-inactive);
+}
+.lightning {
+  @include rune-image(lightning);
+}
+.lightning-inactive {
+  @include rune-image(lightning-inactive);
+}
+.skull {
+  @include rune-image(skull);
+}
+.skull-inactive {
+  @include rune-image(skull-inactive);
+}
