@@ -1,10 +1,15 @@
-@import '../../theme/fonts.scss';
+@import '../../theme/colors.scss';
+@import '../../theme/breakpoints.scss';
 
 .rune-board {
   flex: 3;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
+
+  @media #{$small-and-down} {
+    flex-direction: row;
+  }
 }
 
 .path-container {
@@ -12,13 +17,28 @@
   flex-direction: row;
   align-items: center;
   margin: 0 30px;
+
+  @media #{$small-and-down} {
+    flex-direction: column;
+  }
 }
 
 .talent-path {
+  display: flex;
+  flex: 1;
   color: $ts-white-1;
   font-size: 12px;
 }
 
 .rune-path {
-  flex: 1
+  display: flex;
+  flex-direction: row;
+  flex: 4;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px;
+
+  @media #{$small-and-down} {
+    flex-direction: column;
+  }
 }

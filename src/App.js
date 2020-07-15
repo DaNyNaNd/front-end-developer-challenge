@@ -6,6 +6,7 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
+      <img src='/talent-calc-bg.png' alt="background" />
       <Header />
       <div className="board-container">
         <RuneBoard />

@@ -1,6 +1,10 @@
+@import '../../theme/colors.scss';
+
 $rune-image: url('/talent-icons-sprite.png');
 $rune-height: 50px;
 $rune-width: 50px;
+$inactive-border: 5px solid $ts-gray-2;
+$active-border: 5px solid $ts-white-2;
 
 @mixin rune-image($rune) {
   background-image: $rune-image;
@@ -8,56 +12,71 @@ $rune-width: 50px;
   background-repeat: no-repeat;
   width: $rune-width;
   height: $rune-height;
-  margin: 40px;
   display: inline-block;
 
   @if $rune == chevron {
     background-position: left top;
+    border: $active-border;
   }
   @else if $rune == chevron-inactive {
     background-position: left bottom;
+    border: $inactive-border;
   }
   @else if $rune == silverware {
     background-position: -50px top;
+    border: $active-border;
   }
   @else if $rune == silverware-inactive {
     background-position: -50px bottom;
+    border: $inactive-border; 
   }
   @else if $rune == cake {
     background-position: -100px top;
+    border: $active-border;
   }
   @else if $rune == cake-inactive {
     background-position: -100px bottom;
+    border: $inactive-border;
   }
   @else if $rune == crown {
     background-position: -150px top;
+    border: $active-border;
   }
   @else if $rune == crown-inactive {
     background-position: -150px bottom;
+    border: $inactive-border;
   }
   @else if $rune == skimask {
     background-position: -200px top;
+    border: $active-border;
   }
   @else if $rune == skimask-inactive {
     background-position: -200px bottom;
+    border: $inactive-border;
   }
   @else if $rune == snorkel {
     background-position: -250px top;
+    border: $active-border;
   }
   @else if $rune == snorkel-inactive {
     background-position: -250px bottom;
+    border: $inactive-border;
   }
   @else if $rune == lightning {
     background-position: -300px top;
+    border: $active-border;
   }
   @else if $rune == lightning-inactive {
     background-position: -300px bottom;
+    border: $inactive-border;
   }
   @else if $rune == skull {
     background-position: -350px top;
+    border: $active-border;
   }
   @else if $rune == skull-inactive {
     background-position: -350px bottom;
+    border: $inactive-border;
   }
 }
 

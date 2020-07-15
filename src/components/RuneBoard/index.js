@@ -40,9 +40,17 @@ const RuneBoard = () => {
   const updateRunes = (clickType, pathIndex, runeIndex) => {
     const newSelectedRunes = [...selectedRunes];
       if(clickType === 'click') {
-        for (let i = 0; i <= runeIndex; i++) {
-          newSelectedRunes[pathIndex][i].active = true;
+        if (numberOfActiveRunes >= totalPoints) {
+          alert("You've selected the maximum amount of runes available. Play more to unlock additional runes.");
+          return;
         }
+        if (runeIndex === 0) newSelectedRunes[pathIndex][runeIndex].active = true; 
+        else if (newSelectedRunes[pathIndex][runeIndex - 1].active === false) {
+          alert("You must select each rune in sequential order. Make sure the previous runes in this path have been activated.");
+          return;
+        }
+        else
+          newSelectedRunes[pathIndex][runeIndex].active = true;
       } else if (clickType === 'contextmenu') {
         for (let i = runeIndex; i <= newSelectedRunes.length + 1; i++) {
           newSelectedRunes[pathIndex][i].active = false;

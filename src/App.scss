@@ -1,16 +1,34 @@
+@import './theme/breakpoints.scss';
+
 .App {
   display: flex;
   flex-direction: column;
   width: 998px;
   height: 373px;
-  margin: auto;
-  background-image: url('/talent-calc-bg.png');
-  background-repeat: no-repeat;
-  text-align: center;
+  margin: 0px auto;
+
+  @media #{$small-and-down} {
+    width: 373px;
+    max-height: 998px;
+  }
+
+  img {
+    position: absolute;
+    z-index: -1;
+
+    @media #{$small-and-down} {
+      transform: rotate(90deg) translate(0, 313px);
+    }
+  }
 
   .board-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @media #{$small-and-down} {
+      flex-direction: column;
+      min-height: 450px;
+    }
   }
 }
