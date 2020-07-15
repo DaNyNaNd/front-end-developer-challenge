@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Rune from '../Rune';
 import PointCounter from '../PointCounter';
 import './styles.scss'
@@ -18,14 +18,17 @@ const RuneBoard = () => {
     "skull"
   ]];
 
-  const initialSetup = runePaths.map(paths => {
-    return paths.map(path => {
-      return { name: path, active: false }
-    })
-  })
-
-  const [selectedRunes, setSelectedRunes] = useState(initialSetup);
+  const [selectedRunes, setSelectedRunes] = useState([]);
   const [numberOfActiveRunes, setNumberOfActiveRunes] = useState(0);
+
+  useEffect(() => {
+    const initialSetup = runePaths.map(paths => {
+      return paths.map(path => {
+        return { name: path, active: false }
+      })
+    })
+    setSelectedRunes(initialSetup);
+  }, []);
 
   const countActiveRunes = (runeArray) => {
     let activeRunes = 0;
@@ -44,20 +47,19 @@ const RuneBoard = () => {
           alert("You've selected the maximum amount of runes available. Continue playing to unlock additional runes.");
           return;
         }
-        if (runeIndex === 0) newSelectedRunes[pathIndex][runeIndex].active = true; 
+        else if (runeIndex === 0) newSelectedRunes[pathIndex][runeIndex].active = true; 
         else if (newSelectedRunes[pathIndex][runeIndex - 1].active === false) {
           alert("You must select each rune in sequential order. Make sure the previous runes in this path have been activated.");
           return;
         }
-        else
-          newSelectedRunes[pathIndex][runeIndex].active = true;
+        else newSelectedRunes[pathIndex][runeIndex].active = true;
       } else if (clickType === 'contextmenu') {
         for (let i = runeIndex; i <= newSelectedRunes.length + 1; i++) {
           newSelectedRunes[pathIndex][i].active = false;
         }
       }
     setSelectedRunes(newSelectedRunes);
-    countActiveRunes(newSelectedRunes)
+    countActiveRunes(newSelectedRunes);
   };
 
   return (
