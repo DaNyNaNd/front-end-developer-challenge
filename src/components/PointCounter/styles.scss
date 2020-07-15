@@ -1,5 +1,12 @@
 @import '../../theme/fonts.scss';
 
+.point-counter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
 .points {
   color: $ts-white-1
 }

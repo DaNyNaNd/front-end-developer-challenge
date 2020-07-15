@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.scss";
 
 const Rune = (props) => {
-  const [toggledRune, setToggledRune] = useState(`${props.name}-inactive`);
+  const [toggledRune, setToggledRune] = useState(props.name);
+
+  useEffect(() => {
+    if (props.active) setToggledRune(props.name);
+    else if (!props.active) {
+      const runeInactive = `${props.name}-inactive`;
+      setToggledRune(runeInactive);
+    }
+  }, [props.active]);
 
   const toggleRune = (e) => {
     e.preventDefault();
-    if(e.type === 'click')
-      setToggledRune(props.name)
-    else if (e.type === 'contextmenu')
-      setToggledRune(`${props.name}-inactive`)
+    props.onClick(e.type, props.pathIndex, props.runeIndex);
   }
 
   return (<div 

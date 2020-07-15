@@ -7,4 +7,10 @@
   background-image: url('/talent-calc-bg.png');
   background-repeat: no-repeat;
   text-align: center;
+
+  .board-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }

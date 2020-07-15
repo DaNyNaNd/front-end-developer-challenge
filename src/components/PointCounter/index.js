@@ -2,11 +2,14 @@ import React from 'react'
 import './styles.scss';
 
 const PointCounter = (props) => {
+  console.log(props.numberOfActiveRunes)
+  const { numberOfActiveRunes, totalPoints } = props;
+  const pointsRemaining = totalPoints - numberOfActiveRunes;
   return (
-    <>
-      <span className="points">6/6</span>
+    <div className="point-counter">
+      <span className="points">{pointsRemaining}/{totalPoints}</span>
       <span className="points-spent">Points Spent</span>
-    </>
+    </div>
   )
 }
 
