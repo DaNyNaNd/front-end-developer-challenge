@@ -11,7 +11,7 @@
     color: $ts-white-1;
     font-size: 24px;
 
-    @media #{$small-and-down} {
+    @media #{$medium-and-down} {
       font-size: 20px;
     }
   }

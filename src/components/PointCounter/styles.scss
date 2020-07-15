@@ -8,10 +8,9 @@
   font-size: 20px;
   align-items: center;
 
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     flex-direction: row;
-    position: absolute;
-    bottom: 50px;
+    flex: 0;
   }
 }
 

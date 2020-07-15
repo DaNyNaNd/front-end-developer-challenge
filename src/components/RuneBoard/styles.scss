@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     flex-direction: row;
   }
 }
@@ -18,7 +18,7 @@
   align-items: center;
   margin: 0 30px;
 
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     flex-direction: column;
   }
 }
@@ -28,6 +28,10 @@
   flex: 1;
   color: $ts-white-1;
   font-size: 12px;
+
+  @media #{$medium-and-down} {
+    flex: 0;
+  }
 }
 
 .rune-path {
@@ -38,7 +42,7 @@
   align-items: center;
   margin: 40px;
 
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     flex-direction: column;
   }
 }

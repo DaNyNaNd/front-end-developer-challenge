@@ -7,7 +7,7 @@
   height: 373px;
   margin: 0px auto;
 
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     width: 373px;
     max-height: 998px;
   }
@@ -16,7 +16,7 @@
     position: absolute;
     z-index: -1;
 
-    @media #{$small-and-down} {
+    @media #{$medium-and-down} {
       transform: rotate(90deg) translate(0, 313px);
     }
   }
@@ -26,9 +26,9 @@
     flex-direction: row;
     align-items: center;
 
-    @media #{$small-and-down} {
+    @media #{$medium-and-down} {
       flex-direction: column;
-      min-height: 450px;
+      min-height: 550px;
     }
   }
 }

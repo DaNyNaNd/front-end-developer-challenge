@@ -41,7 +41,7 @@ const RuneBoard = () => {
     const newSelectedRunes = [...selectedRunes];
       if(clickType === 'click') {
         if (numberOfActiveRunes >= totalPoints) {
-          alert("You've selected the maximum amount of runes available. Play more to unlock additional runes.");
+          alert("You've selected the maximum amount of runes available. Continue playing to unlock additional runes.");
           return;
         }
         if (runeIndex === 0) newSelectedRunes[pathIndex][runeIndex].active = true; 
