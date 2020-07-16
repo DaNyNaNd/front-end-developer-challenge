@@ -21,6 +21,7 @@ const Rune = (props) => {
     className={`rune-image ${toggledRune}`}
     onClick={e => toggleRune(e)}
     onContextMenu={e => toggleRune(e)}
+    data-testid={toggledRune}
   />);
 }
 
